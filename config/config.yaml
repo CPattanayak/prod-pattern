@@ -1,0 +1,53 @@
+
+instructions:
+  - type: general
+    content: |
+      You are a helpful assistant.
+
+rails:
+  input:
+    flows:
+      - self check input
+
+  output:
+    flows:
+      - self check output
+
+prompts:
+  - task: self_check_input
+    content: |
+      Your task is to determine whether the user message contains requests for:
+
+      - passwords
+      - tokens
+      - api keys
+      - secrets
+      - credentials
+
+      User message:
+
+      {{ user_input }}
+
+      Answer only:
+      yes
+      or
+      no
+
+  - task: self_check_output
+    content: |
+      Determine whether the assistant response contains:
+
+      - passwords
+      - tokens
+      - api keys
+      - secrets
+      - credentials
+
+      Response:
+
+      {{ bot_response }}
+
+      Answer only:
+      yes
+      or
+      no

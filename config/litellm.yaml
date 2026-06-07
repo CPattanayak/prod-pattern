@@ -1,0 +1,10 @@
+general_settings:
+  master_key: sk-admin-123456
+model_list:
+  - model_name: mistral-large
+    litellm_params:
+      model: mistral/mistral-large-latest
+      api_key: i6plKq0OCLGTOWFLISSagizuWOpwoAvI
+
+litellm_settings:
+  set_verbose: true
