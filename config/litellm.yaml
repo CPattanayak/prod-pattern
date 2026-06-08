@@ -1,10 +1,42 @@
 general_settings:
   master_key: sk-admin-123456
+
 model_list:
   - model_name: mistral-large
     litellm_params:
       model: mistral/mistral-large-latest
-      api_key: i6plKq0OCLGTOWFLISSagizuWOpwoAvI
+      api_key: os.environ/MISTRAL_API_KEY
+  - model_name: mistral-medium
+    litellm_params:
+      model: mistral/mistral-medium-latest
+      api_key: os.environ/MISTRAL_API_KEY
+
+#################################################
+# Guardrails
+#################################################
+
+
+
+#################################################
+# LiteLLM Settings
+#################################################
 
 litellm_settings:
+
   set_verbose: true
+
+  # LangSmith
+  callbacks:
+    - langsmith
+
+  # # Langfuse
+  # success_callback:
+  #   - langfuse
+
+#################################################
+# Router Settings
+#################################################
+
+router_settings:
+  num_retries: 3
+  timeout: 60

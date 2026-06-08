@@ -29,6 +29,14 @@ llm = ChatOpenAI(
     temperature=0,
     streaming=True
 )
+llm1 = ChatOpenAI(
+    model="mistral-medium",
+    api_key="sk-admin-123456",
+    base_url="http://localhost:4000/v1",
+    temperature=0,
+    streaming=True
+)
+
 # -----------------------------
 # NeMo Guardrails
 # -----------------------------
@@ -158,21 +166,21 @@ app = graph.compile()
 # -----------------------------
 # Test 1 - Allowed
 # -----------------------------
-result = app.invoke(
-    {
-        "messages": [
-            {
-                "role": "user",
-                "content": "Show me Weather updates"
-            }
-        ],
-        "category": "",
-        "headlines": [],
-        "blocked": False
-    }
-)
+# result = app.invoke(
+#     {
+#         "messages": [
+#             {
+#                 "role": "user",
+#                 "content": "Show me Weather updates"
+#             }
+#         ],
+#         "category": "",
+#         "headlines": [],
+#         "blocked": False
+#     }
+# )
 
-print(result)
+# print(result)
 
 # -----------------------------
 # Test 2 - Blocked

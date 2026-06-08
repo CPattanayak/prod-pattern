@@ -9,9 +9,9 @@ rails:
     flows:
       - self check input
 
-  output:
-    flows:
-      - self check output
+  # output:
+  #   flows:
+  #     - self check output
 
 prompts:
   - task: self_check_input
@@ -33,21 +33,21 @@ prompts:
       or
       no
 
-  - task: self_check_output
-    content: |
-      Determine whether the assistant response contains:
+  # - task: self_check_output
+  #   content: |
+  #     Determine whether the assistant response contains:
 
-      - passwords
-      - tokens
-      - api keys
-      - secrets
-      - credentials
+  #     - passwords
+  #     - tokens
+  #     - api keys
+  #     - secrets
+  #     - credentials
 
-      Response:
+  #     Response:
 
-      {{ bot_response }}
+  #     {{ bot_response }}
 
-      Answer only:
-      yes
-      or
-      no
+  #     Answer only:
+  #     yes
+  #     or
+  #     no
