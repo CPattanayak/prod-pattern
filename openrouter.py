@@ -22,14 +22,20 @@ class State(TypedDict):
 # -----------------------------
 # LLM
 # -----------------------------
-llm = ChatOpenAI(
+llm1 = ChatOpenAI(
     model="openai/gpt-4.1-nano",
     api_key="sk-or-v1",
     base_url="https://openrouter.ai/api/v1",
     temperature=0,
     streaming=True
 )
-
+llm= ChatOpenAI(
+    model="openrouter/auto",
+    api_key="sk-or-v1",
+    base_url="https://openrouter.ai/api/v1",
+    temperature=0,
+    streaming=True
+)
 
 # -----------------------------
 # NeMo Guardrails
@@ -38,7 +44,7 @@ config = RailsConfig.from_path("config")
 
 rails = LLMRails(
     config=config,
-    llm=LangChainLLMAdapter(llm)
+    llm=LangChainLLMAdapter(llm1)
 )
 
 # -----------------------------
